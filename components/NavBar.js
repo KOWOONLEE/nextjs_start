@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "./NavBar.module.css";
 
 export default function NavBar() {
   const router = useRouter();
+
   return (
     <nav>
-      <img src="" />
+      <img src="/vercel.svg" />
       <div>
         <Link href="/" legacyBehavior>
           <a className={router.pathname === "/" ? "active" : ""}>Home</a>
@@ -24,7 +24,7 @@ export default function NavBar() {
           align-items: center;
           padding-top: 20px;
           padding-bottom: 10px;
-          box-shadow: gba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
             rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
         }
         img {
