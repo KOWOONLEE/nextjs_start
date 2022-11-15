@@ -1,6 +1,31 @@
+const API_KEY = "bdfeb744732f53366f6bad2b48ccfbf4";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-}
+  async redirects() {
+    return [
+      {
+        source: "/contact",
+        destination: "/form",
+        permanent: false,
+      },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: "/api/movies",
+        destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
+      },
+    ];
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
+
+//redirect 이용 - url이 변경
+//한페이지에서 다른페이지로 이동가능 혹은 다른 사이트 이동 가능
+
+//rewrites는 유저를 redirect 시키기는 하지만
+//url은 변경되지 않음.
