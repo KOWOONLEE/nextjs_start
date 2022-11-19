@@ -18,6 +18,11 @@ const nextConfig = {
         source: "/api/movies",
         destination: `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`,
       },
+      {
+        source: "/api/movies/:id",
+        destination: `https://api.themoviedb.org/3/movie/:id?api_key=${API_KEY}`,
+        //source랑 destination명칭을 동일하게 해주기 :id 면 :id로
+      },
     ];
   },
 };
