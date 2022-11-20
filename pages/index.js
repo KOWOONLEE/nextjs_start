@@ -62,7 +62,7 @@ export default function Home({ results }) {
 //이름 중요 바꾸면 안됨. 백엔드에서 실행(서버에서 실행)
 export async function getServerSideProps() {
   const { results } = await (
-    await fetch(`http://localhost:3003/api/movies`)
+    await fetch(`http://localhost:3005/api/movies`)
   ).json();
   return {
     props: {

@@ -63,7 +63,7 @@ export default function Detail({ params, movieDetail }) {
           display: inline-block;
           width: 90%;
           height: 25vh;
-          background-color: #e1e7dd;
+          border: 1px solid gray;
           border-radius: 5px;
           margin: 0 auto;
         }
@@ -103,7 +103,7 @@ export default function Detail({ params, movieDetail }) {
 export async function getServerSideProps({ params: { params } }) {
   // console.log(ctx);
   const movieDetail = await (
-    await axios.get(`http://localhost:3003/api/movies/${params[1]}`)
+    await axios.get(`http://localhost:3005/api/movies/${params[1]}`)
   ).data;
   return {
     props: {
